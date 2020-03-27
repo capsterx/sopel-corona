@@ -11,7 +11,7 @@ from functools import reduce
 def cache(fun):
   data = {"data": 0, "timestamp": 0}
   def new_fun():
-      if time.time() - data['timestamp'] > 5:
+      if time.time() - data['timestamp'] > 300:
           print("Getting data")
           data['data'] = fun()
           data['timestamp'] = time.time()
